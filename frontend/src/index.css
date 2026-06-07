@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background-color: #fdfaf6;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-orange-100 p-5;
+  }
+  .btn-primary {
+    @apply bg-orange-500 hover:bg-orange-600 active:bg-orange-700 text-white font-medium
+           px-4 py-2 rounded-xl transition-colors duration-150 text-sm cursor-pointer
+           disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white hover:bg-orange-50 text-orange-600 font-medium
+           px-4 py-2 rounded-xl border border-orange-200 transition-colors duration-150
+           text-sm cursor-pointer disabled:opacity-60;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm
+           focus:outline-none focus:ring-2 focus:ring-orange-300 focus:border-orange-400
+           bg-white transition-all placeholder:text-gray-400;
+  }
+  .label {
+    @apply block text-xs font-medium text-gray-500 mb-1.5;
+  }
+  .tag-filter {
+    @apply px-3 py-1.5 rounded-full text-xs font-medium border
+           transition-colors duration-150 cursor-pointer whitespace-nowrap;
+  }
+  .tag-filter.active {
+    @apply bg-orange-500 text-white border-orange-500;
+  }
+  .tag-filter:not(.active) {
+    @apply bg-white text-gray-600 border-gray-200 hover:border-orange-300 hover:text-orange-500;
+  }
+
+  /* Order status badges */
+  .status-badge         { @apply text-xs font-medium px-2.5 py-0.5 rounded-full; }
+  .status-new           { @apply bg-blue-100 text-blue-700; }
+  .status-confirmed     { @apply bg-indigo-100 text-indigo-700; }
+  .status-preparing     { @apply bg-amber-100 text-amber-700; }
+  .status-ready         { @apply bg-green-100 text-green-700; }
+  .status-delivered     { @apply bg-teal-100 text-teal-700; }
+  .status-completed     { @apply bg-gray-100 text-gray-600; }
+  .status-cancelled     { @apply bg-red-100 text-red-600; }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #fdba74; border-radius: 2px; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Custom background */
+.bg-warm-50 { background-color: #fdfaf6; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn { animation: fadeIn 0.25s ease-out both; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slideUp { animation: slideUp 0.3s ease-out both; }
