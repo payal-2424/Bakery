@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Search, ChevronRight, Phone, Trash2, Loader2, RefreshCw } from 'lucide-react';
+import { Plus, Search, ChevronRight, Phone, Trash2, Loader2, RefreshCw, ShoppingBag } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { ordersService, inventoryService, customersService } from '../../services';
 import { useAuth } from '../../context/AuthContext';
