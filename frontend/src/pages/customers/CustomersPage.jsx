@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Plus, Search, Phone, Mail, Gift, Star, ChevronRight, Trash2, Loader2 } from 'lucide-react';
+import { Plus, Search, Phone, Mail, Gift, Star, ChevronRight, Trash2, Loader2, Pencil } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { customersService } from '../../services';
 import { useAuth } from '../../context/AuthContext';
